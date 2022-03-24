@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title> Projekt 1 TI_2021 PR</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js"></script>
+        <script src="./workerBubble.js"></script>
+        <script src="./workerSelect.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <nav>
+            <a href="#" id ="Home" onclick="zmienArtykul(this);">Home</a>
+            <a href="#" id ="Bubblesort" onclick="zmienArtykul(this);">Sortowanie bąbelkowe </a>
+            <a href="#" id ="Selectionsort" onclick="zmienArtykul(this);">Sortowanie przez wybieranie </a>
+            <a href="#" id ="WebWorker" onclick="zmienArtykul(this);">WebWorker</a>
+            </nav>
+        </header>
+            <article id = "homepage" class = "articleContent" style = "display: none;">
+                <h1 >Strona informacyjna - dokumentacja projektu</h1>
+                <p>
+                    Ta strona jest rozwiązaniem projektu nr 1 z przedmiotu Techniki Internetowe 2021.
+                </p>
+                
+                <h3 >Temat i zawartość merytoryczna</h3>
+                <p>
+                    Projekt omawia zagadnienie sortowania danych na przykładzie dwóch popularnych algorytmów sortujących. Strona internetowa zawiera górne menu dzięki któremu wygodnie można się przemieszczać pomiędzy sekcjami strony. Informacje teoretyczne oraz symulacje obrazujące działanie algorytmów znajdują się pod opcjami:
+                </p>
+                <ul>
+                    <li>Sortowanie bąbelkowe</li>
+                    <li>Sortowanie przez wybieranie</li>
+                </ul>
+                <p>
+                    W sekcji WebWorker znajdują się porównania czasu działania powyższych algorytmów bez oraz z wykorzystaniem techonologii WebWorker.
+                </p>
+                <h3 >Technologie wykorzystane do realizacji:</h3>
+                                
+                <ul>
+                    <li>HTML5 użyty został do wykonania szkieletu strony. Użyte elementy semantyczne języka to m. in.: <b>&lt;header&gt;</b>, <b>&lt;nav&gt;</b>, <b>&lt;article&gt;</b>, <b>&lt;video&gt;</b>, <b>&lt;footer&gt;</b>.
+                        Przy użyciu elementu <b>&lt;canvas&gt;</b> wykonano przedstawienie graficzne działania algorytmów. </li>
+                    <li>CSS 3.0 jako wsparcie formy prezentacyjnej.</li>
+                    <li>JavaScript wykorzystany do modyfikacji dokumentu HTML5 za pomocą funkcji: <b>getElementById</b> oraz <b>innerHTML</b>.
+                        Funkcje <b>on...</b> umożliwiły obsługę zdarzeń, a operacje na własnościach styli: <b>style.display : none/block</b>.
+                        Technologia WebWorker. </li>
+                    <li>Przeglądarka Firefox wersja 95.0.2</li>    
+                </ul>
+               
+                <h3>Działanie symulacji</h3>
+                <p >
+                    Interfejs symulacji sortowania składa się z:
+                </p>
+                <ul>
+                    <li>elementu canvas, umożliwiającego wyświetlanie symulacji,</li>
+                    <li>przycisku odpowiadającego za pomieszanie danych w tablicy.</li>
+                    <li>przycisku odpowiadającego za wygenerowanie nowych danych w tablicy</li>
+                    <li>przycisku odpowiadającego za wyświetlenie prostej animacji sortowania</li>
+                </ul>
+        
+                <h3>Walidacja </h3>
+                <p>
+                    Strona waliduje się poprawnie na stronie W3C zgodnie ze standardem HTML5 i CSS. 
+                </p>
+            </article>
+        <article id = "bombel" class = "articleContent" style = "display: none;">
+            <h1>Sortowanie bąbelkowe</h1>
+            <p>
+                Sortowanie bąbelkowe to popularny, lecz nieefektywny algorytm sortowania. Polega na wielokrotnym powtarzaniu
+                operacji zamiany sąsiednich elementów, które są w niewłaściwej kolejności. Sortowanie kończy się, gdy podczas kolejnego
+                przejścia nie dokonano żadnej zmiany. 
+            </p> 
+            <div style='display: inline-block; vertical-align: top;'>
+                <video width="478"  controls>
+                    <source src = "Babelkowe.mov" type = "video/mp4">
+                    Twoja przeglądarka nie wspiera odtwarzania materiałów video.
+                </video> 
+                <h4>Przykład działania sortowania bąbelkowego. </h4>
+            </div>
+            <h3>Pseudokod</h3>
+            <b>BUBBLESORT(A)</b>
+            <ol>
+                <li><b>for</b> i &larr; 1 <b>to</b> A.length - 1</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;<b>for</b> j &larr; A.length <b>downto</b> i + 1</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>if</b> A[j] &lt; A[j-1]</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zamień A[j] z A[j-1]</li>
+            </ol> 
+            <h3>Jak działa</h3>
+            <p>
+                W powyższej implementacji algorytm w każdym przebiegu pętli zewnętrznej przesuwa
+                najmniejszą liczbę na początek tablicy i powtarza się dla tablicy mniejszej o ten element.
+                Podczas wykonywania
+                algorytmu tworzą się 2 obszary w tablicy: posortowany (od 1 do i) i nieposortowany (od i+1
+                do length[A]). Z każdą iteracją pętli zewnętrznej posortowany obszar zwiększa się o jeden
+                element (najmniejszy element z nieposortowanej części tablicy). Algorytm wykorzystuje
+                metodę przyrostową.
+
+            </p>
+            <h3>Najważniejsze cechy algorytmu</h3>
+            <table>
+                <thead> <tr><th colspan="2">Cechy algorytmu sortowania bąbelkowego</th></tr></thead>
+                <tbody>
+                    <tr><td>Złożoność czasowa przypadek optymistyczny</td><td><i>O</i>(n<sup>2</sup>)</td></tr>
+                    <tr><td>Złożoność czasowa przypadek typowy</td><td><i>O</i>(n<sup>2</sup>)</td></tr>
+                    <tr><td>Złożoność czasowa przypadek pesymistyczny</td><td><i>O</i>(n<sup>2</sup>)</td></tr>
+                    <tr><td>Złożoność pamięciowa</td><td><i>O</i>(1)</td></tr>
+                    <tr><td>Algorytm sortuje w miejscu</td><td>TAK</td></tr>
+                    <tr><td>Algorytm stabilny</td><td>TAK</td></tr>
+                </tbody>        
+                    
+            </table>    
+
+
+            <h3>Symulator sortowania tablicy</h3>
+            <button id='ref' onclick= 'shuffle()'>Pomieszaj dane</button>
+            <button onclick= 'generujDaneDoSymulacji()'>Nowe dane</button>
+            <button id='start' onclick= 'babelkowe()'>Start</button>
+            <canvas id = "SymulacjaBubble" class ="XDD" width="1320" height="600">ERROR</canvas>
+
+        </article>
+        <article id = "select" class = "articleContent" style = "display: none;">
+            <h1 >Sortowanie przez wybieranie</h1>
+            <p>Sortowanie przez wybieranie polega na wyszukaniu elementu mającego się znaleźć na żądanej pozycji i zamianie miejscami z tym, który jest tam obecnie. 
+               Operacja jest wykonywana dla wszystkich indeksów sortowanej tablicy. W przypadku zbiorów posortowanych odwrotnie oraz nieposortowanych jest kilkakrotnie szybszy niż algorytm sortowania bąbelkowego. </p>
+               <div style='display: inline-block; vertical-align: top;'>
+                <video width="478"  controls>
+                    <source src = "Wybieranie.mov" type = "video/mp4">
+                    Twoja przeglądarka nie wspiera odtwarzania materiałów video.
+                </video> 
+                <h4>Przykład działania sortowania przez wybieranie. </h4>
+            </div>
+            <h3>Pseudokod</h3>
+            <b>SELECTIONSORT(A)</b>
+            <ol>
+                <li><b>for</b> i &larr; 1 <b>to</b> A.length - 1</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;min &larr; i</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;<b>for</b> j &larr; i + 1 <b>to</b> A.length </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>if</b> A[j] &lt; A[min]</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min &larr; j</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp; zamień A[i] z A[min]</li>
+            </ol> 
+               
+            <h3>Jak działa</h3>
+            <p>
+                Algorytm wykorzystuje metodę przyrostową. Na początku przyjmujemy, że minimalnym
+                elementem w nieuporządkowanej części tablicy jest element o indeksie i, czyli pierwszy
+                element z tej części. Następnie sprawdzamy, czy nie ma mniejszego elementu w dalszej
+                części tablicy. Jeśli
+                jest to zapisujemy jego indeks pod min. Po wyjściu z wewnętrznej pętli, ktorej zadaniem jest
+                znalezienie minimalnego elementu, zamieniamy najmniejszy element z tym, ktory jest pod i-
+                tym indeksem w tablicy A
+            </p>  
+            <h3>Najważniejsze cechy algorytmu</h3>
+            <table>
+                <thead> <tr><th colspan="2">Cechy algorytmu sortowania przez wybieranie</th></tr></thead>
+                <tbody>
+                    <tr><td>Złożoność czasowa przypadek optymistyczny</td><td><i>O</i>(n<sup>2</sup>)</td></tr>
+                    <tr><td>Złożoność czasowa przypadek typowy</td><td><i>O</i>(n<sup>2</sup>)</td></tr>
+                    <tr><td>Złożoność czasowa przypadek pesymistyczny</td><td><i>O</i>(n<sup>2</sup>)</td></tr>
+                    <tr><td>Złożoność pamięciowa</td><td><i>O</i>(1)</td></tr>
+                    <tr><td>Algorytm sortuje w miejscu</td><td>TAK</td></tr>
+                    <tr><td>Algorytm stabilny</td><td>NIE</td></tr>
+                </tbody>        
+                    
+            </table> 
+
+
+            <h3>Symulator sortowania tablicy</h3>
+            <button id='ref2' onclick= 'shuffle()'>Pomieszaj dane</button>
+            <button onclick= 'generujDaneDoSymulacji()'>Nowe dane</button>
+            <button id='select2' onclick= 'select()'>Start</button>
+            <canvas id = "SymulacjaSelect" class="XDD" width="1320" height="600">ERROR</canvas> 
+        </article>  
+        <article id = "Worker" class = "articleContent" style = "display: none;">
+            <h1>WebWorker</h1>
+            <p id ="TrescArtykulu"></p>
+            <button onclick= 'TEST()'>Uruchom test</button>
+            <table>
+                <thead> <tr><th colspan="3">Porównanie czasów działania algorytmów z oraz bez wykorzystania technologii WebWorker.</th></tr></thead>
+                <tbody>
+                    <tr><td class="blank"></td><td>bez WebWorker</td><td>WebWorker</td></tr>
+                    <tr><td>Sortowanie przez wybieranie</td><td id="t1"></td><td id="t2"></td></tr>
+                    <tr><td>Sortowanie bąbelkowe</td><td id="t3"></td><td id="t4"></td></tr>
+                </tbody>    
+            </table> 
+            <h3>Wnioski</h3>
+            <p id ="Obserwacje"></p>
+    
+        </article>  
+
+
+        <footer>
+            &copy; Przemysław Rewiś 2022
+        </footer> 
+
+
+        
+    </body>  
+    
+
+    
+
+</html>

@@ -1,0 +1,151 @@
+body{
+    
+	background-color: #4b4e53;
+	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+header {
+    position: fixed;
+    padding: 15px;
+    left:0px;
+    top:0px;
+    width: 100%;
+    text-align: center;
+    background: rgb(90, 95, 126);
+    color: white;
+    font-size: 30px;
+}
+canvas{
+    background-color: #4b4e53;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 25px;
+    
+  
+}
+button
+{
+  padding: 5px 10px;
+  font-size: 10px;
+  background-color: rgb(239, 230, 247);;
+  border: none;
+  color: black;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  cursor: pointer;
+
+}
+button:hover
+{
+    color: black;
+    background:  rgba(239, 230, 247, 0.603);
+
+}
+a {
+  padding: 5px 10px;
+  font-size: 10px;
+  background-color: rgb(239, 230, 247);;
+  border: none;
+  color: black;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+a:hover {
+    color: black;
+    background:  rgba(239, 230, 247, 0.603);
+}
+.articleContent{
+    margin-top: 100px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+
+h1,h3{
+    color: rgb(239, 230, 247);
+    display: block;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+h4{
+    display: block;
+    color: rgb(105, 156, 185);
+}
+
+p{
+    display: block;
+    color: rgb(105, 156, 185);
+    text-align:  justify;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+video{
+    border: 1px solid;
+    border-radius: 12px;
+    border-color: black;
+   
+}
+.textContent ul, li, ol{
+    color: rgb(123, 164, 189);
+    text-align: justify;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+b{
+    color: rgb(105, 156, 185);
+}
+table{ 
+    display: inline-block;
+    margin-left: 25%;
+    margin-right: 25%;
+    border: 1px solid;
+    border-radius: 6px;
+    color: rgb(105, 156, 185);
+
+}
+
+
+thead,td,tr{
+    
+    padding: 5px;
+    border : 1px solid;
+    border-radius: 6px;
+}
+th{
+    padding: 5px;
+   
+}
+td.blank{
+    border : 0px;
+}
+
+
+
+footer {
+    position: fixed;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    left: 0px;
+    bottom: 0px;
+    right: 5px;
+    width: 100%;
+    text-align: center;
+    padding: 7px;
+    background: rgb(90, 95, 126);
+    color: rgb(239, 230, 247);
+}
+     
